@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shahid Hussain | Deccan AI Core Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --ink: #121826;
+      --muted: #566177;
+      --line: #e6eaf2;
+      --soft: #f3f6fc;
+      --brand: #0f4c81;
+      --brand-2: #123456;
+      --accent: #dbe9f8;
+      --success: #edf7ef;
+      --shadow: 0 18px 50px rgba(17, 24, 39, 0.08);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #eef4fb 0%, #f8f9fc 30%, #f7f8fb 100%);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(1160px, calc(100% - 32px));
+      margin: 32px auto 56px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at top right, rgba(78, 150, 220, 0.24), transparent 34%),
+                  linear-gradient(135deg, #0b2f52 0%, #114b7d 48%, #14395f 100%);
+      color: white;
+      border-radius: 30px;
+      padding: 46px 42px;
+      box-shadow: 0 24px 60px rgba(13, 58, 99, 0.22);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.7fr 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 18px 0 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 7vw, 4.7rem);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-role {
+      margin: 0 0 18px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #dcecff;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.88);
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--brand-2);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.28);
+      color: white;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 24px;
+      padding: 22px 22px 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 14px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #dcecff;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      font-size: 0.97rem;
+    }
+
+    .contact-item span {
+      display: block;
+      font-size: 0.73rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 3px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.95fr;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .section-label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--brand);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .highlight-box {
+      margin-top: 18px;
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f7fbff 0%, #eef6fd 100%);
+      border: 1px solid #d8e8f7;
+    }
+
+    .highlight-box strong {
+      color: var(--brand-2);
+    }
+
+    .skills-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .skill-group {
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: var(--soft);
+      border: 1px solid #e8edf7;
+    }
+
+    .skill-group h3 {
+      margin: 0 0 8px;
+      font-size: 0.96rem;
+    }
+
+    .skill-group p {
+      margin: 0;
+      font-size: 0.96rem;
+    }
+
+    .tag-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #f3f7fd;
+      border: 1px solid #dbe7f5;
+      color: #274869;
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .project {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project:first-of-type {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .project h3 {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.35;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef5fb;
+      color: #24527d;
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .project p {
+      margin: 10px 0 0;
+    }
+
+    .project ul {
+      margin: 12px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .project li {
+      margin-bottom: 8px;
+    }
+
+    .reasoning {
+      display: grid;
+      gap: 16px;
+    }
+
+    .reasoning-box {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: #fbfcff;
+      border: 1px dashed #cddaf0;
+    }
+
+    .reasoning-box h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .role {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: #fafcff;
+      border: 1px solid #e7edf7;
+    }
+
+    .role-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .role h3 {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .date {
+      color: var(--brand);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .role ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .mini-card {
+      padding: 18px 20px;
+      border-radius: 20px;
+      background: var(--soft);
+      border: 1px solid #e7edf7;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .footer-note {
+      margin-top: 26px;
+      padding: 24px 28px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #edf5fc 0%, #f8fbff 100%);
+      border: 1px solid #d7e6f5;
+    }
+
+    .footer-note h2 {
+      margin: 0 0 10px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 34px 24px;
+      }
+
+      .page {
+        width: min(100% - 18px, 1160px);
+        margin: 10px auto 30px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+      .page {
+        width: 100%;
+        margin: 0;
+      }
+      .hero,
+      .card,
+      .footer-note {
+        box-shadow: none;
+      }
+      .btn {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">Graduate Trainee Application • Core Engineering Track • Deccan AI</div>
+          <h1>Shahid Hussain</h1>
+          <p class="hero-role">Electronics & Communication Engineer • Core Systems • Simulation • Embedded Engineering</p>
+          <p>
+            Final-year ECE undergraduate with a strong foundation in <strong>signal processing, digital systems,
+            closed-loop control, embedded systems, and numerical problem-solving</strong>. I enjoy analysing engineering
+            problems from first principles, modelling and validating them through simulation or hardware testing,
+            and communicating technical reasoning clearly.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:shahid_hussain@srmap.edu.in">Email Me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/shahid-hussain-7ba47a369" target="_blank">LinkedIn</a>
+            <a class="btn btn-secondary" href="https://github.com/shahidhussain-1" target="_blank">GitHub</a>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Profile Snapshot</h3>
+          <div class="contact-list">
+            <div class="contact-item">
+              <span>Target Role</span>
+              Graduate Trainee — Core Engineering Track, Deccan AI
+            </div>
+            <div class="contact-item">
+              <span>Degree</span>
+              B.Tech, Electronics & Communication Engineering
+            </div>
+            <div class="contact-item">
+              <span>University</span>
+              SRM University, Andhra Pradesh
+            </div>
+            <div class="contact-item">
+              <span>CGPA</span>
+              9.16 / 10
+            </div>
+            <div class="contact-item">
+              <span>Location</span>
+              Andhra Pradesh, India
+            </div>
+            <div class="contact-item">
+              <span>Phone</span>
+              +91 9010735139
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUMMARY + SKILLS -->
+    <section class="grid">
+      <div class="stack">
+        <div class="card">
+          <span class="section-label">Professional Summary</span>
+          <h2>Core ECE mindset with strong engineering verification skills</h2>
+          <p>
+            I am seeking the <strong>Graduate Trainee – Core Engineering Track</strong> role at Deccan AI because my
+            strengths align closely with high-accuracy technical work: breaking down complex systems, validating
+            behavior through modelling and testing, identifying failure cases, and explaining reasoning clearly.
+            My academic background in ECE, combined with hands-on work in <strong>MATLAB/Simulink, embedded systems,
+            sensor pipelines, Python, and debugging</strong>, has trained me to think in terms of inputs, constraints,
+            system response, edge cases, and reliable verification.
+          </p>
+
+          <div class="highlight-box">
+            <strong>What I bring to Deccan AI:</strong> strong core fundamentals, structured technical reasoning,
+            comfort with simulation and hardware-integrated systems, careful validation of outputs, and the ability
+            to learn quickly while maintaining accuracy.
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="section-label">Featured Core Engineering Projects</span>
+          <h2>Projects framed around engineering analysis, not just implementation</h2>
+
+          <div class="project">
+            <div class="project-head">
+              <h3>Adaptive Cruise Control — Closed-Loop Control System Simulation</h3>
+              <div class="project-meta">
+                <span class="pill">Control Systems</span>
+                <span class="pill">MATLAB / Simulink</span>
+              </div>
+            </div>
+            <p>
+              Designed and analysed a <strong>closed-loop automotive speed control system</strong> using a
+              <strong>PID controller</strong> to maintain a desired vehicle speed under varying system conditions.
+            </p>
+            <ul>
+              <li>Built a numerical model of the system and implemented a PID-based control loop in MATLAB/Simulink.</li>
+              <li>Tuned controller parameters to study the trade-off between <strong>rise time, overshoot, settling time, and steady-state error</strong>.</li>
+              <li>Evaluated system response through simulation plots and refined the design based on stability and performance observations.</li>
+              <li>Strengthened understanding of <strong>feedback control, dynamic response, and controller verification</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-head">
+              <h3>Smart Healthcare Monitoring — Multi-Sensor Embedded Data Pipeline</h3>
+              <div class="project-meta">
+                <span class="pill">Embedded Systems</span>
+                <span class="pill">ESP32</span>
+                <span class="pill">IoT Systems</span>
+              </div>
+            </div>
+            <p>
+              Developed a real-time monitoring system that collects physiological and environmental data from multiple
+              sensors and transmits it to a cloud dashboard for observation and alerting.
+            </p>
+            <ul>
+              <li>Interfaced multiple sensors with <strong>ESP32</strong> and organised sensor acquisition into a structured data pipeline.</li>
+              <li>Implemented <strong>threshold-based alert logic</strong> and backend validation to reduce false or inconsistent readings.</li>
+              <li>Focused on system reliability by considering <strong>noise, abnormal values, communication flow, and real-time updates</strong>.</li>
+              <li>Gained practical experience in <strong>embedded data acquisition, system integration, and fault-aware monitoring design</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-head">
+              <h3>Air Quality Monitoring System — Sensor Data Validation & Analytical Modelling</h3>
+              <div class="project-meta">
+                <span class="pill">Signal/Data Analysis</span>
+                <span class="pill">Python</span>
+                <span class="pill">Applied ML</span>
+              </div>
+            </div>
+            <p>
+              Built an end-to-end system to ingest sensor measurements, clean and process the data, and analyse air-quality
+              patterns using computational methods.
+            </p>
+            <ul>
+              <li>Processed live sensor data using <strong>Pandas and NumPy</strong>, handling missing values, noise, and inconsistent samples.</li>
+              <li>Created a structured backend ingestion flow to transform raw measurements into usable analytical outputs.</li>
+              <li>Trained and evaluated a <strong>scikit-learn model</strong> to classify or estimate air-quality conditions.</li>
+              <li>Developed an engineering approach to <strong>data quality, preprocessing, and result verification</strong>.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-head">
+              <h3>Real-Time Vision-Based Identification System — Hardware-Integrated Perception Pipeline</h3>
+              <div class="project-meta">
+                <span class="pill">Raspberry Pi</span>
+                <span class="pill">OpenCV</span>
+                <span class="pill">Embedded Vision</span>
+              </div>
+            </div>
+            <p>
+              Implemented a real-time face detection and recognition pipeline on <strong>Raspberry Pi</strong> for automated
+              identification and logging.
+            </p>
+            <ul>
+              <li>Designed a complete pipeline from image capture → preprocessing → detection → recognition → event logging.</li>
+              <li>Integrated hardware-driven access logic and real-time notification workflows.</li>
+              <li>Evaluated performance under practical conditions and improved robustness through testing and tuning.</li>
+              <li>Demonstrated ability to connect <strong>software algorithms with embedded hardware constraints</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="stack">
+        <div class="card">
+          <span class="section-label">Core Technical Skills</span>
+          <h2>Skills relevant to Core Engineering at Deccan AI</h2>
+
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3>Core ECE Domains</h3>
+              <p>Signal Processing, Digital Systems, Control Systems, Communication Fundamentals, Embedded Systems, Electronic Circuit Basics, Numerical Problem-Solving.</p>
+            </div>
+
+            <div class="skill-group">
+              <h3>Simulation & Engineering Tools</h3>
+              <p>MATLAB, Simulink, PID Controller Design, System Modelling, Waveform/Response Analysis, LTspice exposure, circuit and system debugging approach.</p>
+            </div>
+
+            <div class="skill-group">
+              <h3>Embedded & Hardware</h3>
+              <p>Embedded C, ESP32, Raspberry Pi, sensor interfacing, UART / SPI / I2C fundamentals, real-time data acquisition, IoT system integration.</p>
+            </div>
+
+            <div class="skill-group">
+              <h3>Programming & Technical Analysis</h3>
+              <p>Python, C, C++, MATLAB scripting, NumPy, Pandas, OpenCV, structured debugging, technical documentation, Git/GitHub.</p>
+            </div>
+          </div>
+
+          <div class="tag-wrap">
+            <span class="tag">MATLAB / Simulink</span>
+            <span class="tag">PID Control</span>
+            <span class="tag">Embedded Systems</span>
+            <span class="tag">ESP32</span>
+            <span class="tag">Raspberry Pi</span>
+            <span class="tag">Signal Processing</span>
+            <span class="tag">Python</span>
+            <span class="tag">Sensor Data Analysis</span>
+            <span class="tag">Debugging</span>
+            <span class="tag">Technical Reasoning</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="section-label">Why This Profile Fits Deccan AI</span>
+          <h2>Not just project experience — engineering thinking</h2>
+          <div class="reasoning">
+            <div class="reasoning-box">
+              <h3>1. I think in systems</h3>
+              <p>I approach problems by identifying inputs, constraints, expected behavior, disturbances, and measurable outputs before jumping to implementation.</p>
+            </div>
+            <div class="reasoning-box">
+              <h3>2. I verify before concluding</h3>
+              <p>From PID simulation tuning to sensor data validation, I focus on checking whether the system response or output is actually reasonable.</p>
+            </div>
+            <div class="reasoning-box">
+              <h3>3. I can connect core ECE with practical tools</h3>
+              <p>I am comfortable using MATLAB, Python, embedded hardware, and debugging methods to test engineering ideas in a practical way.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REASONING + EXPERIENCE -->
+    <section class="grid" style="margin-top:24px;">
+      <div class="card">
+        <span class="section-label">Core Engineering Reasoning Sample</span>
+        <h2>How I approach a technical problem</h2>
+
+        <div class="reasoning">
+          <div class="reasoning-box">
+            <h3>Example: Debugging an unstable closed-loop response</h3>
+            <p>
+              When a control system shows excessive overshoot or slow settling, I do not tune parameters randomly.
+              I first check whether the issue is coming from <strong>controller gain selection, system delay,
+              sensor noise, or an unrealistic model assumption</strong>.
+            </p>
+            <p style="margin-top:10px;">
+              In my cruise control project, I analysed the simulated response curve and adjusted PID terms step by step:
+              <strong>Kp</strong> to improve response speed, <strong>Ki</strong> to reduce steady-state error, and
+              <strong>Kd</strong> to control oscillations. I then verified whether the improvement was genuine or simply
+              shifting the problem from overshoot to slower recovery.
+            </p>
+          </div>
+
+          <div class="reasoning-box">
+            <h3>What this shows for Deccan AI</h3>
+            <p>
+              This reflects the kind of thinking needed in Core Engineering work: <strong>structured analysis,
+              parameter-level reasoning, validation of results, and careful interpretation of system behavior</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="section-label">Experience</span>
+        <h2>Industry exposure with emphasis on debugging and delivery</h2>
+
+        <div class="timeline">
+          <div class="role">
+            <div class="role-top">
+              <h3>Software Developer Intern — Eval Pvt Ltd</h3>
+              <div class="date">Jan 2026 – Jun 2026 • Remote</div>
+            </div>
+            <ul>
+              <li>Developed and maintained backend components and REST-style application workflows.</li>
+              <li>Tested, debugged, and validated system behavior by tracing failures across application and data flow stages.</li>
+              <li>Worked with structured problem-solving, requirement understanding, and iterative improvement.</li>
+            </ul>
+          </div>
+
+          <div class="role">
+            <div class="role-top">
+              <h3>Web Development Intern — Edunet Foundation</h3>
+              <div class="date">2024 • Remote</div>
+            </div>
+            <ul>
+              <li>Built and improved web-based applications while collaborating in a team environment.</li>
+              <li>Debugged implementation issues and supported delivery of working project features.</li>
+              <li>Strengthened practical development, documentation, and troubleshooting skills.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="card" style="margin-top:24px;">
+      <span class="section-label">Education & Academic Foundation</span>
+      <h2>Electronics & Communication Engineering</h2>
+
+      <div class="two-col" style="margin-top:16px;">
+        <div class="mini-card">
+          <h3>SRM University, Andhra Pradesh</h3>
+          <p><strong>B.Tech in Electronics & Communication Engineering</strong></p>
+          <p style="margin-top:8px;">2023 – 2027</p>
+          <p style="margin-top:8px;"><strong>CGPA:</strong> 9.16 / 10</p>
+        </div>
+
+        <div class="mini-card">
+          <h3>Relevant Coursework</h3>
+          <p>
+            Signal Processing, Digital Systems, Control Systems, Computer Programming,
+            Data Structures & Algorithms, Communication Fundamentals, Microprocessors / Embedded Concepts.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="footer-note">
+      <span class="section-label">Closing Statement</span>
+      <h2>Why I want the Core Engineering Track at Deccan AI</h2>
+      <p>
+        I am particularly interested in Deccan AI’s Core Engineering Track because it values accurate reasoning,
+        technical depth, and careful validation of complex problems. As an ECE student, I have developed a strong base
+        in modelling, simulation, embedded systems, and structured debugging. I want to apply that foundation to
+        real engineering problems where clarity, correctness, and disciplined thinking matter. I am eager to learn fast,
+        accept technical feedback, and contribute reliably to high-quality engineering outcomes at Deccan AI.
+      </p>
+    </section>
+
+  </main>
+</body>
+</html>
